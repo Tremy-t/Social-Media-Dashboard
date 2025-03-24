@@ -126,14 +126,14 @@ export const scheduledPosts: PostData[] = [
   },
   {
     id: '3',
-    content: 'We're hiring! Join our growing team of social media specialists. Apply now:',
+    content: "We're hiring! Join our growing team of social media specialists. Apply now:",
     scheduled: new Date(Date.now() + 3600000 * 48), // 48 hours from now
     platform: 'linkedin',
     status: 'scheduled',
   },
   {
     id: '4',
-    content: 'Our CEO will be live tomorrow discussing the future of digital marketing. Don't miss it!',
+    content: "Our CEO will be live tomorrow discussing the future of digital marketing. Don't miss it!",
     scheduled: new Date(Date.now() - 3600000 * 6), // 6 hours ago
     platform: 'twitter',
     status: 'posted',
