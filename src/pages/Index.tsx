@@ -6,7 +6,7 @@ import MetricsOverview from '@/components/MetricsOverview';
 import PlatformCards from '@/components/PlatformCards';
 import ScheduledPosts from '@/components/ScheduledPosts';
 import EngagementChart from '@/components/EngagementChart';
-import { metrics, platforms, scheduledPosts, engagementData } from '@/utils/mockData';
+import { metrics, platforms, scheduledPosts, engagementData } from '@/utils/mockData.js';
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
