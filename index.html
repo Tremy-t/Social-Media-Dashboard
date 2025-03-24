@@ -1,16 +1,338 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Media Dashboard</title>
-    <meta name="description" content="Track your social media performance and manage scheduled content with our comprehensive dashboard." />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mountain Brew Café</title>
+  <meta name="description" content="Mountain Brew - A cozy café serving premium coffee, tea, and fresh pastries." />
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Mountain Brew</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content animate fadeInUp">
+        <h2>Crafting Moments, One Cup at a Time</h2>
+        <p>Experience premium coffee in a cozy atmosphere at Mountain Brew Café.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Section -->
+  <section class="featured">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">What We Offer</h2>
+      <div class="featured-items">
+        <div class="featured-item animate fadeInUp delay-200">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Premium Coffee">
+          <h3>Premium Coffee</h3>
+          <p>Sourced from the finest coffee regions and roasted to perfection.</p>
+        </div>
+        <div class="featured-item animate fadeInUp delay-400">
+          <img src="https://images.unsplash.com/photo-1557772611-722c8e3cd8bf" alt="Artisan Pastries">
+          <h3>Artisan Pastries</h3>
+          <p>Freshly baked every morning using traditional recipes.</p>
+        </div>
+        <div class="featured-item animate fadeInUp delay-600">
+          <img src="https://images.unsplash.com/photo-1551887196-9e839d459a25" alt="Peaceful Ambiance">
+          <h3>Peaceful Ambiance</h3>
+          <p>A tranquil environment perfect for work, conversation, or relaxation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee Journey Section -->
+  <section class="coffee-journey">
+    <div class="container">
+      <div class="journey-content">
+        <h2 class="animate fadeInUp">Our Coffee Journey</h2>
+        <p class="animate fadeInUp delay-200">From carefully selected beans to the perfect cup, we take pride in every step of our coffee-making process.</p>
+        <div class="coffee-steps">
+          <div class="coffee-step animate fadeInUp delay-200">
+            <span class="step-number">1</span>
+            <h3>Sourcing</h3>
+            <p>We source our beans from sustainable farms around the globe.</p>
+          </div>
+          <div class="coffee-step animate fadeInUp delay-400">
+            <span class="step-number">2</span>
+            <h3>Roasting</h3>
+            <p>Our master roaster brings out the unique flavor profile of each bean.</p>
+          </div>
+          <div class="coffee-step animate fadeInUp delay-600">
+            <span class="step-number">3</span>
+            <h3>Brewing</h3>
+            <p>Skilled baristas prepare your coffee using precise techniques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">Our Menu</h2>
+      <div class="menu-categories animate fadeInUp delay-200">
+        <div class="category active" data-category="coffee">Coffee</div>
+        <div class="category" data-category="tea">Tea</div>
+        <div class="category" data-category="pastries">Pastries</div>
+        <div class="category" data-category="breakfast">Breakfast</div>
+      </div>
+      <div id="menu-items" class="menu-items animate fadeInUp delay-400">
+        <!-- Menu items will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">What Our Customers Say</h2>
+      <div class="testimonials-slider animate fadeInUp delay-200">
+        <div class="testimonial-items">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>The coffee here is exceptional! I love the cozy atmosphere and friendly staff. It's become my favorite place to work remotely.</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                <div class="author-details">
+                  <h4>Sarah Johnson</h4>
+                  <span>Regular Customer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>Their pastries are made fresh daily and pair perfectly with their coffee. The staff is knowledgeable and always recommends great options.</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                <div class="author-details">
+                  <h4>Michael Chen</h4>
+                  <span>Coffee Enthusiast</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>I've tried many cafés in the area, and Mountain Brew consistently delivers the best coffee experience. Highly recommended!</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                <div class="author-details">
+                  <h4>Emily Rodriguez</h4>
+                  <span>Local Food Blogger</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-control prev">&larr;</button>
+          <button class="testimonial-control next">&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title animate fadeInLeft">Our Story</h2>
+          <p class="animate fadeInLeft delay-200">Mountain Brew began in 2010 with a simple idea: create a space where coffee isn't just served, but celebrated. Founded by two friends with a passion for quality coffee, we've grown from a small corner shop to a beloved local establishment.</p>
+          <p class="animate fadeInLeft delay-400">We believe that great coffee brings people together. That's why we source only the finest beans, roast them with care, and serve each cup with pride. Our café is designed to be a welcoming space for everyone—whether you're catching up with friends, working remotely, or simply enjoying a moment of solitude.</p>
+          <a href="#contact" class="btn animate fadeInLeft delay-600">Get in Touch</a>
+        </div>
+        <div class="about-image animate fadeInRight">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" alt="Our Café">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee Quiz -->
+  <section class="coffee-quiz">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">Find Your Perfect Cup</h2>
+      <p class="animate fadeInUp delay-200">Not sure what to order? Take our quick quiz to discover your ideal coffee match!</p>
+      
+      <div class="quiz-container animate fadeInUp delay-400">
+        <div class="quiz-intro">
+          <h3>Coffee Preference Quiz</h3>
+          <p>Answer a few questions to help us recommend the perfect coffee for your taste preferences.</p>
+          <button class="btn start-quiz">Start Quiz</button>
+        </div>
+        
+        <div class="quiz-questions" data-question="1">
+          <h3>How strong do you like your coffee?</h3>
+          <button class="quiz-option" data-value="mild">Mild and smooth</button>
+          <button class="quiz-option" data-value="medium">Medium strength</button>
+          <button class="quiz-option" data-value="strong">Strong and bold</button>
+          <div class="quiz-controls">
+            <button class="btn next-question">Next Question</button>
+          </div>
+        </div>
+        
+        <div class="quiz-questions" data-question="2">
+          <h3>How do you prefer your milk?</h3>
+          <button class="quiz-option" data-value="black">No milk (black)</button>
+          <button class="quiz-option" data-value="little">Just a little milk</button>
+          <button class="quiz-option" data-value="lots">Lots of milk</button>
+          <div class="quiz-controls">
+            <button class="btn prev-question">Previous Question</button>
+            <button class="btn next-question">Next Question</button>
+          </div>
+        </div>
+        
+        <div class="quiz-questions" data-question="3">
+          <h3>Do you prefer additional flavors?</h3>
+          <button class="quiz-option" data-value="none">No added flavors</button>
+          <button class="quiz-option" data-value="sweet">Sweet (vanilla, caramel)</button>
+          <button class="quiz-option" data-value="spicy">Spicy (cinnamon, nutmeg)</button>
+          <div class="quiz-controls">
+            <button class="btn prev-question">Previous Question</button>
+            <button class="btn show-result">See Recommendation</button>
+          </div>
+        </div>
+        
+        <div class="quiz-result">
+          <h3>Your Perfect Coffee Match</h3>
+          <div class="recommended-coffee">
+            <h4 id="recommended-coffee-name">Latte</h4>
+            <p id="recommended-coffee-desc">Based on your preferences, a smooth latte would be perfect for you!</p>
+          </div>
+          <button class="btn restart-quiz">Take Quiz Again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="location" id="location">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">Find Us</h2>
+      <div class="location-content">
+        <div class="location-details animate fadeInLeft">
+          <div>
+            <h3>Main Café</h3>
+            <p>123 Coffee Street<br>Portland, OR 97205</p>
+            <p>Monday-Friday: 6:30am - 8:00pm<br>Weekends: 7:00am - 9:00pm</p>
+          </div>
+          <div>
+            <h3>Downtown Location</h3>
+            <p>456 Urban Avenue<br>Portland, OR 97204</p>
+            <p>Monday-Friday: 6:00am - 7:00pm<br>Weekends: 8:00am - 6:00pm</p>
+          </div>
+        </div>
+        <div class="map-placeholder animate fadeInRight">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=Portland,OR&zoom=13&size=600x350&maptype=roadmap&markers=color:brown%7CPinned+Location&key=YOUR_API_KEY" alt="Map Location">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title animate fadeInUp">Contact Us</h2>
+      <div class="contact-wrapper">
+        <form id="contact-form" class="animate fadeInLeft">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div class="contact-info animate fadeInRight">
+          <h3>Get In Touch</h3>
+          <p>Have questions about our menu, catering services, or private events? Reach out to us, and we'll get back to you as soon as possible.</p>
+          <p>Email: info@mountainbrew.com<br>Phone: (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>Mountain Brew</h2>
+          <p>Crafting moments, one cup at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe to receive updates, special offers, and coffee tips.</p>
+          <form id="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Mountain Brew Café. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="script.js"></script>
+</body>
 </html>
