@@ -1,26 +1,207 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>s-112742</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Brew Haven - Artisan Coffee Shop</title>
+    <meta name="description" content="Artisan coffee and freshly baked goods in a cozy atmosphere" />
+    <meta name="author" content="Brew Haven" />
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Brew Haven - Artisan Coffee Shop" />
+    <meta property="og:description" content="Experience the perfect cup at our artisan coffee shop" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1500673922987-e212871fec22" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:site" content="@brewhaven" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1500673922987-e212871fec22" />
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Brew Haven</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Crafting Perfect Moments</h2>
+          <p>Specialty coffee and freshly baked pastries in a warm, welcoming space</p>
+          <a href="#menu" class="btn">Explore Our Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured">
+      <div class="container">
+        <h2 class="section-title">Featured Offerings</h2>
+        <div class="featured-items">
+          <div class="featured-item">
+            <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" alt="Signature Espresso">
+            <h3>Signature Espresso</h3>
+            <p>Our house blend with notes of chocolate and caramel</p>
+          </div>
+          <div class="featured-item">
+            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Artisan Pastries">
+            <h3>Artisan Pastries</h3>
+            <p>Baked fresh daily using locally-sourced ingredients</p>
+          </div>
+          <div class="featured-item">
+            <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04" alt="Specialty Brews">
+            <h3>Specialty Brews</h3>
+            <p>Rotating selection of pour-over and cold brew options</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="menu-categories">
+          <div class="category active" data-category="coffee">Coffee</div>
+          <div class="category" data-category="tea">Tea</div>
+          <div class="category" data-category="pastries">Pastries</div>
+          <div class="category" data-category="breakfast">Breakfast</div>
+        </div>
+        <div class="menu-items" id="menu-items">
+          <!-- Menu items will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">Our Story</h2>
+            <p>Founded in 2015, Brew Haven began with a simple mission: create a space where coffee, community, and comfort intersect. Our founders, Emily and James, met in culinary school and shared a passion for ethical sourcing and artisanal methods.</p>
+            <p>Today, we continue to source our beans directly from small farms around the world, roast in small batches, and serve with care. Our pastries are made fresh daily, and we're proud to support local producers for all our ingredients.</p>
+            <a href="#contact" class="btn">Connect With Us</a>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Our coffee shop interior">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="location">
+      <div class="container">
+        <h2 class="section-title">Find Us</h2>
+        <div class="location-content">
+          <div class="location-details">
+            <div class="address">
+              <h3>Address</h3>
+              <p>123 Coffee Lane<br>Portland, OR 97205</p>
+            </div>
+            <div class="hours">
+              <h3>Hours</h3>
+              <p>Monday-Friday: 6am-8pm<br>
+                 Saturday-Sunday: 7am-9pm</p>
+            </div>
+            <div class="contact-info">
+              <h3>Contact</h3>
+              <p>Phone: (555) 123-4567<br>
+                 Email: hello@brewhaven.com</p>
+            </div>
+          </div>
+          <div class="map">
+            <!-- Simple placeholder for a map -->
+            <div class="map-placeholder">
+              <p>Map loading...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-wrapper">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+          <div class="contact-info">
+            <h3>Connect With Us</h3>
+            <p>We'd love to hear from you! Whether you have a question about our menu, want to book a private event, or are interested in our catering services, drop us a line.</p>
+            <div class="social-links">
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>Brew Haven</h2>
+            <p>Crafting perfect moments, one cup at a time</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#location">Location</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for special offers and events</p>
+            <form id="newsletter-form">
+              <input type="email" placeholder="Your email address">
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Brew Haven. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
