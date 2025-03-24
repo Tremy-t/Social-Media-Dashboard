@@ -5,27 +5,14 @@ import { cn } from '@/lib/utils';
 interface AvatarProps {
   src?: string;
   initials?: string;
-  size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ 
-  src, 
-  initials, 
-  size = 'md', 
-  className 
-}) => {
-  const sizeClasses = {
-    sm: 'w-8 h-8 text-xs',
-    md: 'w-10 h-10 text-sm',
-    lg: 'w-12 h-12 text-base',
-  };
-
+const Avatar: React.FC<AvatarProps> = ({ src, initials, className }) => {
   return (
     <div 
       className={cn(
-        'rounded-full overflow-hidden flex items-center justify-center bg-primary/10 text-primary-foreground font-medium',
-        sizeClasses[size],
+        'relative w-10 h-10 rounded-full overflow-hidden bg-primary flex items-center justify-center text-primary-foreground font-medium', 
         className
       )}
     >
@@ -36,7 +23,7 @@ const Avatar: React.FC<AvatarProps> = ({
           className="w-full h-full object-cover"
         />
       ) : (
-        <span>{initials || 'U'}</span>
+        <span className="text-sm">{initials}</span>
       )}
     </div>
   );

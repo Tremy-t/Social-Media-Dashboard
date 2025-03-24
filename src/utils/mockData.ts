@@ -1,167 +1,124 @@
 
-// Mock data for the social media dashboard
-export interface MetricData {
-  id: number;
-  name: string;
-  value: number;
-  change: number; // Percentage change
-  icon: string;
-}
+import { Facebook, Twitter, Instagram, Linkedin, Users, BarChart2, ArrowUp, MessageSquare, Share2 } from 'lucide-react';
+import React from 'react';
 
-export interface PlatformData {
-  id: string;
-  name: string;
-  icon: string;
-  color: string;
-  followers: number;
-  engagement: number;
-  growth: number;
-}
-
-export interface PostData {
-  id: string;
-  content: string;
-  image?: string;
-  scheduled: Date; 
-  platform: string; 
-  status: 'scheduled' | 'posted' | 'draft' | 'error';
-}
-
-export interface EngagementData {
-  date: string;
-  facebook: number;
-  twitter: number;
-  instagram: number;
-  linkedin: number;
-}
-
-// Key metrics for overview
-export const metrics: MetricData[] = [
+// Metrics for the dashboard overview
+export const metrics = [
   {
-    id: 1,
-    name: 'Total Followers',
-    value: 124500,
-    change: 2.5,
-    icon: 'users',
+    id: 'followers',
+    title: 'Total Followers',
+    value: '112,893',
+    change: 12.5,
+    trend: 'up',
+    icon: <Users className="w-5 h-5 text-blue-600" />
   },
   {
-    id: 2,
-    name: 'Engagement Rate',
-    value: 4.2,
-    change: 0.8,
-    icon: 'activity',
+    id: 'engagement',
+    title: 'Engagement Rate',
+    value: '4.3%',
+    change: 2.1,
+    trend: 'up',
+    icon: <BarChart2 className="w-5 h-5 text-green-600" />
   },
   {
-    id: 3,
-    name: 'Scheduled Posts',
-    value: 45,
-    change: -12,
-    icon: 'calendar',
+    id: 'posts',
+    title: 'Total Posts',
+    value: '478',
+    change: 0,
+    trend: 'neutral',
+    icon: <MessageSquare className="w-5 h-5 text-purple-600" />
   },
   {
-    id: 4,
-    name: 'Monthly Growth',
-    value: 3200,
-    change: 5.7,
-    icon: 'trending-up',
-  },
+    id: 'shares',
+    title: 'Total Shares',
+    value: '24,755',
+    change: 8.3,
+    trend: 'down',
+    icon: <Share2 className="w-5 h-5 text-orange-600" />
+  }
 ];
 
-// Platform data
-export const platforms: PlatformData[] = [
+// Social media platforms
+export const platforms = [
   {
     id: 'facebook',
     name: 'Facebook',
-    icon: 'facebook',
-    color: 'facebook',
-    followers: 45800,
-    engagement: 1.2,
-    growth: 0.7,
+    icon: <Facebook className="w-6 h-6" />,
+    followers: '45,231',
+    engagement: '2.1%',
+    color: '#1877F2'
   },
   {
     id: 'twitter',
     name: 'Twitter',
-    icon: 'twitter',
-    color: 'twitter',
-    followers: 28700,
-    engagement: 2.8,
-    growth: 1.9,
+    icon: <Twitter className="w-6 h-6" />,
+    followers: '27,644',
+    engagement: '1.8%',
+    color: '#1DA1F2'
   },
   {
     id: 'instagram',
     name: 'Instagram',
-    icon: 'instagram',
-    color: 'instagram',
-    followers: 36500,
-    engagement: 5.3,
-    growth: 2.3,
+    icon: <Instagram className="w-6 h-6" />,
+    followers: '32,456',
+    engagement: '5.4%',
+    color: '#E4405F'
   },
   {
     id: 'linkedin',
     name: 'LinkedIn',
-    icon: 'linkedin',
-    color: 'linkedin',
-    followers: 13500,
-    engagement: 3.1,
-    growth: 4.6,
-  },
+    icon: <Linkedin className="w-6 h-6" />,
+    followers: '7,562',
+    engagement: '3.5%',
+    color: '#0A66C2'
+  }
 ];
 
-// Scheduled posts
-export const scheduledPosts: PostData[] = [
+// Scheduled posts data
+export const scheduledPosts = [
   {
     id: '1',
-    content: 'Excited to announce our new product line coming next month! Stay tuned for more updates. #NewProduct #Announcement',
-    scheduled: new Date(Date.now() + 3600000 * 24), // Tomorrow
-    platform: 'facebook',
-    status: 'scheduled',
+    title: 'New product announcement',
+    platform: 'Facebook',
+    platformIcon: <Facebook className="w-5 h-5 text-facebook" />,
+    date: 'Tomorrow',
+    time: '09:00 AM',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e'
   },
   {
     id: '2',
-    content: 'Check out our latest blog post on "10 Tips for Social Media Success" - Link in bio!',
-    image: 'blog-post-image.jpg',
-    scheduled: new Date(Date.now() + 3600000 * 12), // 12 hours from now
-    platform: 'instagram',
-    status: 'scheduled',
+    title: 'Weekly product tips & tricks',
+    platform: 'Twitter',
+    platformIcon: <Twitter className="w-5 h-5 text-twitter" />,
+    date: 'Jun 15, 2023',
+    time: '12:30 PM'
   },
   {
     id: '3',
-    content: "We're hiring! Join our growing team of social media specialists. Apply now:",
-    scheduled: new Date(Date.now() + 3600000 * 48), // 48 hours from now
-    platform: 'linkedin',
-    status: 'scheduled',
+    title: 'Behind the scenes: company culture',
+    platform: 'Instagram',
+    platformIcon: <Instagram className="w-5 h-5 text-instagram" />,
+    date: 'Jun 16, 2023',
+    time: '15:45 PM',
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad'
   },
   {
     id: '4',
-    content: "Our CEO will be live tomorrow discussing the future of digital marketing. Don't miss it!",
-    scheduled: new Date(Date.now() - 3600000 * 6), // 6 hours ago
-    platform: 'twitter',
-    status: 'posted',
-  },
-  {
-    id: '5',
-    content: 'Holiday campaign draft - review copy and images before scheduling.',
-    image: 'holiday-campaign.jpg',
-    scheduled: new Date(Date.now() + 3600000 * 72), // 72 hours from now
-    platform: 'facebook',
-    status: 'draft',
-  },
-  {
-    id: '6',
-    content: 'Product tutorial video #3 - How to use our new mobile app features.',
-    scheduled: new Date(Date.now() - 3600000 * 2), // 2 hours ago
-    platform: 'instagram',
-    status: 'error',
-  },
+    title: 'Industry news roundup for the week',
+    platform: 'LinkedIn',
+    platformIcon: <Linkedin className="w-5 h-5 text-linkedin" />,
+    date: 'Jun 17, 2023',
+    time: '10:15 AM'
+  }
 ];
 
-// Engagement data for chart
-export const engagementData: EngagementData[] = [
-  { date: 'Mon', facebook: 245, twitter: 120, instagram: 380, linkedin: 90 },
-  { date: 'Tue', facebook: 285, twitter: 130, instagram: 390, linkedin: 105 },
-  { date: 'Wed', facebook: 255, twitter: 180, instagram: 420, linkedin: 125 },
-  { date: 'Thu', facebook: 290, twitter: 170, instagram: 410, linkedin: 130 },
-  { date: 'Fri', facebook: 310, twitter: 210, instagram: 450, linkedin: 140 },
-  { date: 'Sat', facebook: 280, twitter: 190, instagram: 430, linkedin: 120 },
-  { date: 'Sun', facebook: 250, twitter: 150, instagram: 390, linkedin: 95 },
+// Engagement chart data
+export const engagementData = [
+  { date: 'Mon', likes: 4000, comments: 2400, shares: 1000 },
+  { date: 'Tue', likes: 3000, comments: 1398, shares: 800 },
+  { date: 'Wed', likes: 2000, comments: 9800, shares: 1200 },
+  { date: 'Thu', likes: 2780, comments: 3908, shares: 1400 },
+  { date: 'Fri', likes: 1890, comments: 4800, shares: 1600 },
+  { date: 'Sat', likes: 2390, comments: 3800, shares: 1000 },
+  { date: 'Sun', likes: 3490, comments: 4300, shares: 1700 }
 ];
