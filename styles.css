@@ -1,4 +1,3 @@
-
 /* Base Styles */
 :root {
   --primary-color: #6F4E37; /* Coffee brown */
@@ -98,6 +97,87 @@ section {
   padding: 80px 0;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  opacity: 0;
+}
+
+.animate.fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate.fadeInLeft {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate.fadeInRight {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.animate.zoomIn {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
 /* Header & Navigation */
 header {
   position: fixed;
@@ -169,16 +249,17 @@ nav ul li a:hover::after {
   transition: var(--transition);
 }
 
-/* Hero Section */
+/* Updated Hero Section with 3D Effect */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(44, 30, 20, 0.7), rgba(44, 30, 20, 0.7)), 
-              url('https://images.unsplash.com/photo-1500673922987-e212871fec22') no-repeat center center/cover;
+  background: linear-gradient(rgba(44, 30, 20, 0.8), rgba(44, 30, 20, 0.8)), 
+              url('https://images.unsplash.com/photo-1493962853295-0fd70327578a') no-repeat center center/cover;
   display: flex;
   align-items: center;
   text-align: center;
   padding-top: 80px;
   color: var(--text-light);
+  background-attachment: fixed;
 }
 
 .hero-content {
@@ -236,6 +317,294 @@ nav ul li a:hover::after {
 .featured-item p {
   padding: 0 20px 20px;
   color: var(--text-dark);
+}
+
+/* Coffee Journey Section */
+.coffee-journey {
+  padding: 100px 0;
+  background: linear-gradient(rgba(44, 30, 20, 0.9), rgba(44, 30, 20, 0.9)), 
+              url('https://images.unsplash.com/photo-1618160702438-9b02ab6515c9') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.journey-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.coffee-journey h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.coffee-journey p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.coffee-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.coffee-step {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: var(--transition);
+}
+
+.coffee-step:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.coffee-step h3 {
+  margin: 15px 0;
+  font-size: 1.4rem;
+}
+
+.step-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: var(--background-light);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.testimonials .section-title {
+  margin-bottom: 60px;
+}
+
+.testimonials-slider {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-items {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial {
+  min-width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.testimonial-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  position: relative;
+  text-align: left;
+}
+
+.testimonial-content:before {
+  content: """;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 80px;
+  line-height: 1;
+  font-family: serif;
+  color: rgba(111, 78, 55, 0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.author-details h4 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.author-details span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.testimonial-controls {
+  margin-top: 30px;
+}
+
+.testimonial-control {
+  background: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.testimonial-control:hover {
+  background: var(--secondary-color);
+}
+
+/* Coffee Showcase Section */
+.coffee-showcase {
+  padding: 100px 0;
+  background-color: white;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.showcase-item {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.showcase-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.showcase-item:hover img {
+  transform: scale(1.05);
+}
+
+.showcase-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 20px;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.showcase-item:hover .showcase-overlay {
+  transform: translateY(0);
+}
+
+.showcase-overlay h3 {
+  margin: 0 0 10px 0;
+}
+
+/* Coffee Quiz */
+.coffee-quiz {
+  background-color: var(--background-light);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.quiz-container {
+  max-width: 800px;
+  margin: 40px auto 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.quiz-intro, .quiz-questions, .quiz-result {
+  transition: var(--transition);
+}
+
+.quiz-questions, .quiz-result {
+  display: none;
+}
+
+.quiz-questions.active, .quiz-result.active {
+  display: block;
+}
+
+.quiz-intro.hidden, .quiz-questions.hidden {
+  display: none;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: var(--background-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quiz-option:hover {
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+}
+
+.quiz-controls {
+  margin-top: 20px;
+}
+
+.quiz-result h3 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.quiz-result p {
+  margin-bottom: 25px;
+}
+
+.recommended-coffee {
+  padding: 20px;
+  background-color: var(--background-light);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.recommended-coffee h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
 /* Menu Section */
@@ -489,7 +858,37 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Media Queries */
+/* 3D Mockups */
+.mockup-3d {
+  position: relative;
+  perspective: 1000px;
+  margin: 40px auto;
+  max-width: 500px;
+}
+
+.mockup-device {
+  transform-style: preserve-3d;
+  transform: rotateY(-20deg) rotateX(10deg);
+  transition: transform 0.5s ease;
+}
+
+.mockup-device:hover {
+  transform: rotateY(-15deg) rotateX(5deg);
+}
+
+.mockup-screen {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 15px solid #222;
+}
+
+.mockup-screen img {
+  width: 100%;
+  display: block;
+}
+
+/* Updated media queries */
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
@@ -538,6 +937,15 @@ footer {
   
   .about-image {
     order: -1;
+  }
+  
+  .coffee-steps,
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mockup-device {
+    transform: rotateY(-10deg) rotateX(5deg);
   }
 }
 

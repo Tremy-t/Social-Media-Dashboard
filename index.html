@@ -32,6 +32,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about">Our Story</a></li>
+            <li><a href="#coffee-journey">Coffee Journey</a></li>
+            <li><a href="#coffee-showcase">Gallery</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -47,28 +49,28 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
-          <h2>Crafting Perfect Moments</h2>
-          <p>Specialty coffee and freshly baked pastries in a warm, welcoming space</p>
-          <a href="#menu" class="btn">Explore Our Menu</a>
+          <h2 class="animate fadeInUp">Crafting Perfect Moments</h2>
+          <p class="animate fadeInUp delay-200">Specialty coffee and freshly baked pastries in a warm, welcoming space</p>
+          <a href="#menu" class="btn animate fadeInUp delay-400">Explore Our Menu</a>
         </div>
       </div>
     </section>
 
     <section id="featured" class="featured">
       <div class="container">
-        <h2 class="section-title">Featured Offerings</h2>
+        <h2 class="section-title animate fadeInUp">Featured Offerings</h2>
         <div class="featured-items">
-          <div class="featured-item">
+          <div class="featured-item animate fadeInUp">
             <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" alt="Signature Espresso">
             <h3>Signature Espresso</h3>
             <p>Our house blend with notes of chocolate and caramel</p>
           </div>
-          <div class="featured-item">
+          <div class="featured-item animate fadeInUp delay-200">
             <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Artisan Pastries">
             <h3>Artisan Pastries</h3>
             <p>Baked fresh daily using locally-sourced ingredients</p>
           </div>
-          <div class="featured-item">
+          <div class="featured-item animate fadeInUp delay-400">
             <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04" alt="Specialty Brews">
             <h3>Specialty Brews</h3>
             <p>Rotating selection of pour-over and cold brew options</p>
@@ -77,14 +79,46 @@
       </div>
     </section>
 
+    <section id="coffee-journey" class="coffee-journey">
+      <div class="container">
+        <div class="journey-content">
+          <h2 class="animate fadeInUp">The Journey of Our Coffee</h2>
+          <p class="animate fadeInUp delay-200">From carefully selected beans to the perfect cup, we ensure quality at every step of the process.</p>
+          
+          <div class="coffee-steps">
+            <div class="coffee-step animate fadeInUp">
+              <div class="step-number">1</div>
+              <h3>Bean Selection</h3>
+              <p>We source beans from sustainable farms across the globe, focusing on ethical practices and exceptional flavor profiles.</p>
+            </div>
+            <div class="coffee-step animate fadeInUp delay-200">
+              <div class="step-number">2</div>
+              <h3>Small-Batch Roasting</h3>
+              <p>Our master roasters carefully develop each bean's unique characteristics through precise small-batch roasting techniques.</p>
+            </div>
+            <div class="coffee-step animate fadeInUp delay-400">
+              <div class="step-number">3</div>
+              <h3>Expert Preparation</h3>
+              <p>Our baristas are trained in the art and science of coffee, ensuring each cup meets our exacting standards.</p>
+            </div>
+            <div class="coffee-step animate fadeInUp delay-600">
+              <div class="step-number">4</div>
+              <h3>Perfect Serve</h3>
+              <p>Whether it's a simple espresso or complex pour-over, we serve each drink with care and attention to detail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="menu" class="menu">
       <div class="container">
-        <h2 class="section-title">Our Menu</h2>
+        <h2 class="section-title animate fadeInUp">Our Menu</h2>
         <div class="menu-categories">
-          <div class="category active" data-category="coffee">Coffee</div>
-          <div class="category" data-category="tea">Tea</div>
-          <div class="category" data-category="pastries">Pastries</div>
-          <div class="category" data-category="breakfast">Breakfast</div>
+          <div class="category active animate fadeInUp" data-category="coffee">Coffee</div>
+          <div class="category animate fadeInUp delay-200" data-category="tea">Tea</div>
+          <div class="category animate fadeInUp delay-400" data-category="pastries">Pastries</div>
+          <div class="category animate fadeInUp delay-600" data-category="breakfast">Breakfast</div>
         </div>
         <div class="menu-items" id="menu-items">
           <!-- Menu items will be populated by JavaScript -->
@@ -95,24 +129,205 @@
     <section id="about" class="about">
       <div class="container">
         <div class="about-content">
-          <div class="about-text">
+          <div class="about-text animate fadeInLeft">
             <h2 class="section-title">Our Story</h2>
             <p>Founded in 2015, Brew Haven began with a simple mission: create a space where coffee, community, and comfort intersect. Our founders, Emily and James, met in culinary school and shared a passion for ethical sourcing and artisanal methods.</p>
             <p>Today, we continue to source our beans directly from small farms around the world, roast in small batches, and serve with care. Our pastries are made fresh daily, and we're proud to support local producers for all our ingredients.</p>
             <a href="#contact" class="btn">Connect With Us</a>
           </div>
-          <div class="about-image">
+          <div class="about-image animate fadeInRight">
             <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Our coffee shop interior">
           </div>
         </div>
       </div>
     </section>
 
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title animate fadeInUp">What Our Customers Say</h2>
+        <div class="testimonials-slider animate zoomIn">
+          <div class="testimonial-items">
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"The coffee at Brew Haven is exceptional! I've tried coffee shops all over the city, and nothing compares to their signature espresso blend. The atmosphere is perfect for both working and socializing."</p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Sarah Johnson">
+                  <div class="author-details">
+                    <h4>Sarah Johnson</h4>
+                    <span>Regular Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"As a pastry chef, I'm incredibly picky about baked goods. Brew Haven's croissants are the best I've had outside of Paris! Perfectly flaky and buttery. Their coffee pairing suggestions are spot on too."</p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1493962853295-0fd70327578a" alt="Michael Chen">
+                  <div class="author-details">
+                    <h4>Michael Chen</h4>
+                    <span>Local Chef</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"I've been hosting my book club at Brew Haven for over a year now. The staff is always accommodating, the space is cozy, and everyone loves their seasonal drink specials. It's become our second home!"</p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" alt="Lisa Rodriguez">
+                  <div class="author-details">
+                    <h4>Lisa Rodriguez</h4>
+                    <span>Book Club Organizer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-control prev">&larr;</button>
+          <button class="testimonial-control next">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="coffee-showcase" class="coffee-showcase">
+      <div class="container">
+        <h2 class="section-title animate fadeInUp">Coffee Showcase</h2>
+        <div class="showcase-grid">
+          <div class="showcase-item animate fadeInUp">
+            <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" alt="Coffee brewing">
+            <div class="showcase-overlay">
+              <h3>Pour-Over Mastery</h3>
+              <p>Our baristas demonstrate the art of pour-over brewing</p>
+            </div>
+          </div>
+          <div class="showcase-item animate fadeInUp delay-200">
+            <img src="https://images.unsplash.com/photo-1493962853295-0fd70327578a" alt="Coffee beans">
+            <div class="showcase-overlay">
+              <h3>Bean Selection</h3>
+              <p>Premium coffee beans from sustainable farms</p>
+            </div>
+          </div>
+          <div class="showcase-item animate fadeInUp delay-400">
+            <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04" alt="Latte art">
+            <div class="showcase-overlay">
+              <h3>Latte Art</h3>
+              <p>Every cup is a canvas for our baristas</p>
+            </div>
+          </div>
+          <div class="showcase-item animate fadeInUp delay-600">
+            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Coffee shop ambiance">
+            <div class="showcase-overlay">
+              <h3>Cozy Atmosphere</h3>
+              <p>The perfect environment to enjoy your coffee</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coffee-quiz">
+      <div class="container">
+        <h2 class="section-title animate fadeInUp">Find Your Perfect Coffee</h2>
+        <p class="animate fadeInUp delay-200">Not sure what to order? Take our quick quiz to discover your ideal brew!</p>
+        
+        <div class="quiz-container animate zoomIn delay-400">
+          <div class="quiz-intro">
+            <h3>Coffee Preference Quiz</h3>
+            <p>Answer a few questions to find your perfect coffee match.</p>
+            <button class="btn start-quiz">Start Quiz</button>
+          </div>
+          
+          <div class="quiz-questions" data-question="1">
+            <h3>Question 1 of 3</h3>
+            <p>How do you like your coffee strength?</p>
+            <button class="quiz-option" data-value="mild">Mild - subtle and gentle</button>
+            <button class="quiz-option" data-value="medium">Medium - balanced flavor</button>
+            <button class="quiz-option" data-value="strong">Strong - bold and intense</button>
+            <div class="quiz-controls">
+              <button class="btn next-question">Next</button>
+            </div>
+          </div>
+          
+          <div class="quiz-questions" data-question="2">
+            <h3>Question 2 of 3</h3>
+            <p>Do you prefer coffee with milk?</p>
+            <button class="quiz-option" data-value="black">No milk - black coffee only</button>
+            <button class="quiz-option" data-value="little">A little milk</button>
+            <button class="quiz-option" data-value="lots">Lots of milk</button>
+            <div class="quiz-controls">
+              <button class="btn prev-question">Previous</button>
+              <button class="btn next-question">Next</button>
+            </div>
+          </div>
+          
+          <div class="quiz-questions" data-question="3">
+            <h3>Question 3 of 3</h3>
+            <p>Any flavor preferences?</p>
+            <button class="quiz-option" data-value="none">No additional flavors</button>
+            <button class="quiz-option" data-value="sweet">Sweet (vanilla, caramel)</button>
+            <button class="quiz-option" data-value="nutty">Nutty (hazelnut, almond)</button>
+            <button class="quiz-option" data-value="spicy">Spicy (cinnamon, cardamom)</button>
+            <div class="quiz-controls">
+              <button class="btn prev-question">Previous</button>
+              <button class="btn show-result">See Result</button>
+            </div>
+          </div>
+          
+          <div class="quiz-result">
+            <h3>Your Perfect Coffee Match</h3>
+            <p id="quiz-result-text">Based on your preferences, we recommend:</p>
+            <div class="recommended-coffee">
+              <h4 id="recommended-coffee-name">Loading recommendation...</h4>
+              <p id="recommended-coffee-desc">Please wait...</p>
+            </div>
+            <button class="btn restart-quiz">Take Quiz Again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-mockup">
+      <div class="container">
+        <h2 class="section-title animate fadeInUp">Our Mobile App</h2>
+        <p class="animate fadeInUp delay-200">Order ahead, earn rewards, and get exclusive offers with our mobile app.</p>
+        
+        <div class="mockup-3d animate zoomIn delay-400">
+          <div class="mockup-device">
+            <div class="mockup-screen">
+              <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Brew Haven mobile app">
+            </div>
+          </div>
+        </div>
+        
+        <div class="app-features">
+          <div class="feature animate fadeInUp">
+            <h3>Skip the Line</h3>
+            <p>Order and pay ahead for quick pickup</p>
+          </div>
+          <div class="feature animate fadeInUp delay-200">
+            <h3>Loyalty Rewards</h3>
+            <p>Earn points with every purchase</p>
+          </div>
+          <div class="feature animate fadeInUp delay-400">
+            <h3>Exclusive Offers</h3>
+            <p>Get app-only discounts and promotions</p>
+          </div>
+        </div>
+        
+        <div class="app-cta animate fadeInUp delay-600">
+          <a href="#" class="btn">Download Now</a>
+        </div>
+      </div>
+    </section>
+
     <section id="location" class="location">
       <div class="container">
-        <h2 class="section-title">Find Us</h2>
+        <h2 class="section-title animate fadeInUp">Find Us</h2>
         <div class="location-content">
-          <div class="location-details">
+          <div class="location-details animate fadeInLeft">
             <div class="address">
               <h3>Address</h3>
               <p>123 Coffee Lane<br>Portland, OR 97205</p>
@@ -128,7 +343,7 @@
                  Email: hello@brewhaven.com</p>
             </div>
           </div>
-          <div class="map">
+          <div class="map animate fadeInRight">
             <!-- Simple placeholder for a map -->
             <div class="map-placeholder">
               <p>Map loading...</p>

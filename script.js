@@ -1,4 +1,3 @@
-
 // Menu items data
 const menuData = {
   coffee: [
@@ -227,6 +226,15 @@ document.addEventListener('DOMContentLoaded', function() {
       header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
     }
   });
+
+  // Scroll animations
+  initScrollAnimations();
+  
+  // Testimonial slider
+  initTestimonialSlider();
+  
+  // Coffee quiz
+  initCoffeeQuiz();
 });
 
 // Function to load menu items
@@ -254,4 +262,205 @@ function loadMenuItems(category) {
     
     menuItemsContainer.appendChild(menuItem);
   });
+}
+
+// Initialize scroll animations
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('.animate');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.visibility = 'visible';
+        // Don't re-animate elements that have already been animated
+        if (!entry.target.classList.contains('animated')) {
+          entry.target.classList.add('animated');
+          // The actual class that contains the animation is already applied
+          // We just need to reset opacity since it's set to 0 in CSS
+          entry.target.style.opacity = '1';
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  animatedElements.forEach(el => {
+    el.style.visibility = 'hidden';
+    observer.observe(el);
+  });
+}
+
+// Initialize testimonial slider
+function initTestimonialSlider() {
+  const sliderContainer = document.querySelector('.testimonial-items');
+  const testimonials = document.querySelectorAll('.testimonial');
+  const prevButton = document.querySelector('.testimonial-control.prev');
+  const nextButton = document.querySelector('.testimonial-control.next');
+  
+  if (!sliderContainer || testimonials.length === 0) return;
+  
+  let currentIndex = 0;
+  
+  // Set initial position
+  updateSliderPosition();
+  
+  // Add event listeners to buttons
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    updateSliderPosition();
+  });
+  
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    updateSliderPosition();
+  });
+  
+  function updateSliderPosition() {
+    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+  
+  // Auto slide every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    updateSliderPosition();
+  }, 5000);
+}
+
+// Initialize coffee quiz
+function initCoffeeQuiz() {
+  const quizContainer = document.querySelector('.quiz-container');
+  if (!quizContainer) return;
+  
+  const startButton = quizContainer.querySelector('.start-quiz');
+  const nextButtons = quizContainer.querySelectorAll('.next-question');
+  const prevButtons = quizContainer.querySelectorAll('.prev-question');
+  const resultButton = quizContainer.querySelector('.show-result');
+  const restartButton = quizContainer.querySelector('.restart-quiz');
+  const quizIntro = quizContainer.querySelector('.quiz-intro');
+  const quizQuestions = quizContainer.querySelectorAll('.quiz-questions');
+  const quizResult = quizContainer.querySelector('.quiz-result');
+  const options = quizContainer.querySelectorAll('.quiz-option');
+  
+  let currentQuestion = 1;
+  const userAnswers = {
+    strength: '',
+    milk: '',
+    flavor: ''
+  };
+  
+  // Start quiz
+  startButton.addEventListener('click', () => {
+    quizIntro.classList.add('hidden');
+    showQuestion(1);
+  });
+  
+  // Next question
+  nextButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (currentQuestion < 3) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+      }
+    });
+  });
+  
+  // Previous question
+  prevButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (currentQuestion > 1) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+      }
+    });
+  });
+  
+  // Select options
+  options.forEach(option => {
+    option.addEventListener('click', (e) => {
+      const question = e.target.closest('.quiz-questions');
+      const questionNumber = parseInt(question.dataset.question);
+      const value = e.target.dataset.value;
+      
+      // Clear previously selected options in this question
+      question.querySelectorAll('.quiz-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      
+      // Mark this option as selected
+      e.target.classList.add('selected');
+      
+      // Store the answer
+      if (questionNumber === 1) userAnswers.strength = value;
+      if (questionNumber === 2) userAnswers.milk = value;
+      if (questionNumber === 3) userAnswers.flavor = value;
+    });
+  });
+  
+  // Show result
+  resultButton.addEventListener('click', () => {
+    hideAllQuestions();
+    quizResult.classList.add('active');
+    generateResult();
+  });
+  
+  // Restart quiz
+  restartButton.addEventListener('click', () => {
+    quizResult.classList.remove('active');
+    quizIntro.classList.remove('hidden');
+    currentQuestion = 1;
+    
+    // Clear selected options
+    options.forEach(option => {
+      option.classList.remove('selected');
+    });
+    
+    // Reset answers
+    userAnswers.strength = '';
+    userAnswers.milk = '';
+    userAnswers.flavor = '';
+  });
+  
+  function showQuestion(num) {
+    hideAllQuestions();
+    quizContainer.querySelector(`.quiz-questions[data-question="${num}"]`).classList.add('active');
+  }
+  
+  function hideAllQuestions() {
+    quizQuestions.forEach(q => {
+      q.classList.remove('active');
+    });
+  }
+  
+  function generateResult() {
+    const resultName = document.getElementById('recommended-coffee-name');
+    const resultDesc = document.getElementById('recommended-coffee-desc');
+    
+    let recommendation = { name: '', description: '' };
+    
+    // Logic to determine coffee recommendation based on user answers
+    if (userAnswers.strength === 'strong' && userAnswers.milk === 'black') {
+      recommendation.name = 'Espresso or Cold Brew';
+      recommendation.description = 'You enjoy bold, intense flavors without dilution. Our house espresso or slow-steeped cold brew would be perfect for you.';
+    } else if (userAnswers.strength === 'strong' && userAnswers.milk === 'little') {
+      recommendation.name = 'Cortado or Macchiato';
+      recommendation.description = 'You like your coffee strong but with a touch of creaminess. Try our cortado or macchiato for the perfect balance.';
+    } else if (userAnswers.milk === 'lots') {
+      recommendation.name = 'Latte or Cappuccino';
+      recommendation.description = 'You enjoy a creamy, smooth coffee experience. Our lattes or cappuccinos would be right up your alley.';
+    } else if (userAnswers.flavor === 'sweet') {
+      recommendation.name = 'Vanilla or Caramel Latte';
+      recommendation.description = 'You have a sweet tooth! Our flavored lattes with vanilla or caramel would satisfy your cravings.';
+    } else if (userAnswers.flavor === 'spicy') {
+      recommendation.name = 'Chai Latte or Spiced Mocha';
+      recommendation.description = 'You enjoy warm spices and complexity. Our chai latte or spiced mocha would delight your taste buds.';
+    } else if (userAnswers.strength === 'mild') {
+      recommendation.name = 'Blonde Roast or Café Au Lait';
+      recommendation.description = 'You prefer a gentler coffee experience. Our blonde roast or café au lait offers subtle flavors without overwhelming.';
+    } else {
+      recommendation.name = 'House Blend';
+      recommendation.description = 'Based on your preferences, our balanced house blend would be a great choice. It offers versatility and approachable flavor.';
+    }
+    
+    resultName.textContent = recommendation.name;
+    resultDesc.textContent = recommendation.description;
+  }
 }
